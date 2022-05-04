@@ -23,9 +23,34 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home() {
 		
 		return "index";
+	}
+	@RequestMapping(value="/login")
+	public String login() {
+		
+		return "login";
+	}
+	@RequestMapping(value="/join")
+	public String join() {
+		
+		return "join";
+	}
+	@RequestMapping(value="/profile")
+	public String profile() {
+		
+		return "profile";
+	}
+	@RequestMapping(value="/question")
+	public String question() {
+		
+		return "question";
+	}
+	@RequestMapping(value="/contact")
+	public String contact() {
+		
+		return "contact";
 	}
 	
 }
