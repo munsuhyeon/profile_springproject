@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>footer</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/table.css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/table.css">
 </head>
 <body>
 	<table class="t-type02"  width="100%" border="0" cellspacing="0" cellpadding="0">

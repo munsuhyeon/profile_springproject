@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+   <mapper namespace="com.suhyeon.ex00.dao.IDao">
+   
+   	<!-- board SQL -->
+   	<select id="listDao" resultType="com.suhyeon.ex00.dto.BoardDto">
+   		select * from q_board order by qnum desc
+   	</select>
+   	
+   	<insert id="writeDao">
+   		insert into q_board(qnum, qid, qname, qcontent, qemail) values (q_board_seq.nextval, #{param1},#{param2},#{param3},#{param4})
+   	</insert>
+   	
+   	<select id="viewDao" resultType="com.suhyeon.ex00.dto.BoardDto">
+   		select * from q_board where qnum = #{param1}
+   	</select>
+   	
+   	<delete id="deleteDao">
+   		delete from q_board where qnum = #{param1}
+   	</delete>
+   	
+   	<update id="modifyDao">
+   		update q_board set qname = #{param1}, qcontent = #{param2}, qemail = #{param3} where qnum = #{param4}
+   	</update>
+   	
+   	<!-- member SQL -->
+   <insert id="joinDao">
+   	insert into pmember (mid, mpw, mname, memail) values (#{param1},#{param2},#{param3},#{param4})
+   </insert>
+   
+   <select id="loginOkDao" resultType="com.suhyeon.ex00.dto.MemberDto">
+   		select * from pmember where mid=#{param1}
+   	</select>
+   	
+   	<select id="checkIdDao" resultType="int">
+   		select count(*) from pmember where mid = #{param1}
+   	</select>
+   	
+   	<select id="checkPwDao" resultType="int">
+   		select count(*) from pmember where mid = #{param1} and mpw = #{param2}
+   	</select>
+   	
+   	<update id="memberInfoModifyOk">
+   		update pmember set mpw = #{param1}, mname = #{param2}, memail = #{param3} where mid  #{param4}
+   	</update>
+   	
+   </mapper>

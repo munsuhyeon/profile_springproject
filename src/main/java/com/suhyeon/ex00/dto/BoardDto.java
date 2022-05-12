@@ -2,74 +2,76 @@
 	
 	public class BoardDto {
 		
-		private int bnum; //게시판번호
-		private String bid;
-		private String bname;
-		private String bquestion;
-		private String bemail;
-		private String mdate; //게시판에 글 작성한 날짜(시간)
+		private int qnum; //게시판번호
+		private String qid;
+		private String qname;
+		private String qquestion;
+		private String qemail;
+		private String qdate; //게시판에 글 작성한 날짜(시간)
 		
 		public BoardDto() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
 
-		public BoardDto(int bnum, String bid, String bname, String bquestion, String bemail, String mdate) {
+		public BoardDto(int qnum, String qid, String qname, String qquestion, String qemail, String qdate) {
 			super();
-			this.bnum = bnum;
-			this.bid = bid;
-			this.bname = bname;
-			this.bquestion = bquestion;
-			this.bemail = bemail;
-			this.mdate = mdate;
+			this.qnum = qnum;
+			this.qid = qid;
+			this.qname = qname;
+			this.qquestion = qquestion;
+			this.qemail = qemail;
+			this.qdate = qdate;
 		}
 
-		public int getBnum() {
-			return bnum;
+		public int getQnum() {
+			return qnum;
 		}
 
-		public void setBnum(int bnum) {
-			this.bnum = bnum;
+		public void setQnum(int qnum) {
+			this.qnum = qnum;
 		}
 
-		public String getBid() {
-			return bid;
+		public String getQid() {
+			return qid;
 		}
 
-		public void setBid(String bid) {
-			this.bid = bid;
+		public void setQid(String qid) {
+			this.qid = qid;
 		}
 
-		public String getBname() {
-			return bname;
+		public String getQname() {
+			return qname;
 		}
 
-		public void setBname(String bname) {
-			this.bname = bname;
+		public void setQname(String qname) {
+			this.qname = qname;
 		}
 
-		public String getBquestion() {
-			return bquestion;
+		public String getQquestion() {
+			return qquestion;
 		}
 
-		public void setBquestion(String bquestion) {
-			this.bquestion = bquestion;
+		public void setQquestion(String qquestion) {
+			this.qquestion = qquestion;
 		}
 
-		public String getBemail() {
-			return bemail;
+		public String getQemail() {
+			return qemail;
 		}
 
-		public void setBemail(String bemail) {
-			this.bemail = bemail;
+		public void setQemail(String qemail) {
+			this.qemail = qemail;
 		}
 
-		public String getMdate() {
-			return mdate;
+		public String getQdate() {
+			return qdate;
 		}
 
-		public void setMdate(String mdate) {
-			this.mdate = mdate;
+		public void setQdate(String qdate) {
+			this.qdate = qdate;
 		}
+
+		
 		
 	}
