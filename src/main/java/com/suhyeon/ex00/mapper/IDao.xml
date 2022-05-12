@@ -43,8 +43,8 @@
    		select count(*) from pmember where mid = #{param1} and mpw = #{param2}
    	</select>
    	
-   	<update id="memberInfoModifyOk">
-   		update pmember set mpw = #{param1}, mname = #{param2}, memail = #{param3} where mid  #{param4}
-   	</update>
+   <update id="memberInfoModifyOkDao">
+		UPDATE pmember SET mpw = #{param1}, mname = #{param2}, memail = #{param3} WHERE mid = #{param4}
+	</update>
    	
    </mapper>

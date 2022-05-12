@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.suhyeon.ex00.dao.IDao;
+import com.suhyeon.ex00.dto.MemberDto;
 
 /**
  * Handles requests for the application home page.
@@ -35,6 +36,11 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
+		
+		return "index";
+	}
+	@RequestMapping(value = "/index")
+	public String index() {
 		
 		return "index";
 	}
@@ -63,7 +69,7 @@ public class HomeController {
 		
 		return "contact";
 	}
-	@RequestMapping(value="/joinOk")
+	@RequestMapping(value="/joinOk", method = RequestMethod.POST)
 	public String joinOk(HttpServletRequest request, Model model) {
 		
 		IDao dao = sqlSession.getMapper(IDao.class);
@@ -89,5 +95,85 @@ public class HomeController {
 		
 		return "joinOk";
 	}
+	@RequestMapping(value="/logout")
+	public String logout() {
+		
+		return "logout";
+	}
 	
+	@RequestMapping(value="/loginOk", method = RequestMethod.POST)
+	public String loginOk(HttpServletRequest request, Model model) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		int checkIdFlag = dao.checkIdDao(request.getParameter("id"));
+		//입력받은 아이디가 DB에 존재하면 1, 아니며면 0 반환
+		int checkPwFlag = dao.checkPwDao(request.getParameter("id"), request.getParameter("pw"));
+		//입력받은 아이디와 그 아이디의 비밀번호가 일치하면 1, 아니면 0이 반환
+		
+		model.addAttribute("checkIdFlag",checkIdFlag);
+		//checkIdFlag=1이면 아이디 사용중, 0이면 신규 가입가능
+		model.addAttribute("checkPwFlag",checkPwFlag);
+		//checkPwFlag=1이면 아이디와 그 아이디의 비밀번호가 일치하므로 로그인 가능
+		
+		if(checkIdFlag == 1) {
+			
+			MemberDto memberdto = dao.loginOkDao(request.getParameter("id"));
+			
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("id", memberdto.getMid());
+			session.setAttribute("name", memberdto.getMname());
+			//로그인 성공시 세션에 아이디와 이름 저장
+			
+			model.addAttribute("mname",memberdto.getMname());
+			model.addAttribute("mid",memberdto.getMid());
+		}
+		
+		return "loginOk";
+	}
+	@RequestMapping(value="/infoModify")
+	public String infoModify(HttpServletRequest request, Model model) {
+		
+		HttpSession session = request.getSession();
+		
+		String sessionId = (String)session.getAttribute("id");
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		MemberDto memberDto = dao.loginOkDao(sessionId);
+		
+		model.addAttribute("memberDto",memberDto);
+		
+		return "infoModify";
+	}
+	@RequestMapping(value="/infoModifyOk")
+	public String infoModifyOk(HttpServletRequest request, Model model) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		dao.memberInfoModifyOkDao(request.getParameter("pw"), request.getParameter("name"), request.getParameter("email"), request.getParameter("id"));
+		
+		MemberDto memberDto = dao.loginOkDao(request.getParameter("id"));
+		
+		model.addAttribute("memberDto", memberDto);
+		
+		return "infoModifyOk";
+	}
+	@RequestMapping(value="/write")
+	public String write(HttpServletRequest request) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		dao.writeDao(request.getParameter("qid"),request.getParameter("qname"),request.getParameter("qcontent"),request.getParameter("qemail"));
+		return "redirect:list";
+	}
+	@RequestMapping(value="/list")
+	public String list(Model model) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		model.addAttribute("list", dao.listDao()) ;
+		
+		return "list";
+	}
 }

@@ -7,7 +7,7 @@
 <title>## Munsuhyeon Profile</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/span.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/table.css">
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/board.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/members.js"></script>
 </head>
 <body>
 	<%@ include file="include/header.jsp" %>
@@ -25,32 +25,27 @@
             <tr>
                	<td height="500" bgcolor="#D5D5D5" align="center">
                		<table border="0" cellspacing="0" cellpadding="10">
-               			<form action="write" method="post" name="reg_frm">
+               			<form action="joinOk" method="post" name="reg_frm">
                				<tr>
-               				<td class="td-type01">ID</td>
-               				<td><input id="input01" type="text" name="qid" value="<%if(session.getAttribute("id")!=null){out.print(session.getAttribute("id"));}else {out.print("GUEST");} %>" readonly></td>
+               					<td class="td-type03">NO</td>
+               					<td class="td-type03">ID</td>
+               					<td class="td-type03">QUESTION</td>
+               					<td class="td-type03">NAME</td>
+               					<td class="td-type03">DATE</td>
                				</tr>
-               				
                				<tr>
-               				<td class="td-type01">NAME</td>
-               				<td><input id="input01" type="text" name="qname"></td>
+               					<td class="td-type03">10</td>
+               					<td class="td-type03">tiger</td>
+               					<td class="td-type03">hello</td>
+               					<td class="td-type03">호랑이</td>
+               					<td class="td-type03">2022-5-12 12:30:20</td>
                				</tr>
-               				
                				<tr>
-               				<td class="td-type01">QUESTION</td>
-               				<td><textarea id="input01" name="qcontent" rows="5" cols="26"></textarea></td>
-               				</tr>
-               				
-               				<tr>
-               				<td class="td-type01">E-MAIL</td>
-               				<td><input id="input01" type="text" name="qemail"></td>
-               				</tr>
-               				
-               				<tr>
-               				<td colspan="2">
-               				<input id="button01" type="button" value="글쓰기" onclick="boardConfirm()">
-               				<input id="button01" type="button" value="글목록" onclick="javascripot:window.location='list'">
-               				</td>
+               					<td class="td-type03">10</td>
+               					<td class="td-type03">tiger</td>
+               					<td class="td-type03">hello</td>
+               					<td class="td-type03">호랑이</td>
+               					<td class="td-type03">2022-5-12 12:30:20</td>
                				</tr>
                			</form>
                		</table>  

@@ -18,10 +18,41 @@ td.td-type01{
 }
 td.td-type02{
 	font-size:20px;
-	color:gray;
+	color:#4C4C4C;
 	font-family:Arial;
 	font-weight:bold;
 }
+td.td-type03{
+	font-size:20px;
+	color:#5f5f5f;
+	font-family:malgun;
+	font-weight:bold;
+	border-style:solid;
+	border-color:white;
+	background-color:#e5e5e5;
+	text-align:center;
+	border-width:1px;
+}
+td.td-type04{
+	font-size:20px;
+	color:#5f5f5f;
+	font-family:malgun;
+	font-weight:bold;
+	border-style:solid;
+	border-color:white;
+	background-color:#e5e5e5;
+	text-align:center;
+	border-width:1px;
+}
+
+td.memberinfo {
+	font-size: 20px;
+	color: #5f5f5f;
+	font-family: malgun;
+	font-weight: bold;
+	
+}
+
 #input01{
 	font-family:Arial;
 	font-size:20px;

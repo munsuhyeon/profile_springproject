@@ -19,6 +19,6 @@ public interface IDao {
 		public MemberDto loginOkDao(String mid); //로그인 성공 여부 체크
 		public int checkIdDao(String mid);// 아이디 존재여부 체크
 		public int checkPwDao(String mid, String mpw); // 아이디와 비밀번호 일치여부 체크
-		public void memberInfoModifyOk(String mpw, String mname, String memail, String mid);// 회원수정
+		public void memberInfoModifyOkDao(String mpw, String mname, String memail, String mid);//회원정보 수정
 
 }
