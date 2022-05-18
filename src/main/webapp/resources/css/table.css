@@ -44,6 +44,17 @@ td.td-type04{
 	text-align:center;
 	border-width:1px;
 }
+td.td-type05{
+	font-size:20px;
+	color:#5f5f5f;
+	font-family:malgun;
+	font-weight:bold;
+	border-style:solid;
+	border-color:white;
+	background-color:#e5e5e5;
+	text-align:left;
+	border-width:1px;
+}
 
 td.memberinfo {
 	font-size: 20px;
@@ -76,15 +87,15 @@ body{
 	margin:0;
 	padding:0;
 }
-a:link{
+a:link{ <!-- (하이퍼링크) 방문하지 않은 링크의 글자색 -->
+	text-decoration: none;
+	color: #0A2229;
+}
+a:visited { <!-- (하이퍼링크) 방문한적 있는 링크의 글자색 +밑줄삭제 -->
 	text-decoration: none;
 	color: #FFFFFF;
 }
-a:visited { <!-- 하이퍼링크 클릭했던것들 색변경,밑줄삭제 -->
-	text-decoration: none;
-	color: #FFFFFF;
-}
-a:hover {<!-- 하이퍼링크 마우스 올리면 색 변경, 밑줄넣기 -->
+a:hover {<!-- (하이퍼링크) 마우스를 링크에 올려두었을 때 글자색 + 밑줄삭제 -->
 	text-decoration: underline;
 	color:gray;
 }

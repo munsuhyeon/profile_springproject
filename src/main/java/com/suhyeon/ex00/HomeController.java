@@ -176,4 +176,28 @@ public class HomeController {
 		
 		return "list";
 	}
+	@RequestMapping(value="/qview")
+	public String qview(HttpServletRequest request, Model model) {
+
+		IDao dao = sqlSession.getMapper(IDao.class);
+		model.addAttribute("qview",dao.viewDao(request.getParameter("qnum")));
+		return "qview";
+	}
+	@RequestMapping(value="/delete")
+	public String delete(HttpServletRequest request) {
+
+		IDao dao = sqlSession.getMapper(IDao.class);
+		dao.deleteDao(request.getParameter("qnum"));
+		
+		return "redirect:list";
+	}
+	@RequestMapping(value="/modify")
+	public String modify(HttpServletRequest request) {
+
+		IDao dao = sqlSession.getMapper(IDao.class);
+		dao.modifyDao(request.getParameter("qname"),request.getParameter("qcontent"), 
+				 request.getParameter("qemail"),request.getParameter("qnum"));
+		
+		return "redirect:list";
+	}
 }
