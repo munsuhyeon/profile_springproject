@@ -45,10 +45,10 @@ public class MemberDto {
 			this.memail = memail;
 		}
 		public String getMdate() {
-			return memail;
+			return mdate;
 		}
 		public void setMdate(String mdate) {
-			this.memail = memail;
+			this.mdate = mdate;
 		}
 		
 	}

@@ -53,7 +53,7 @@
                				<tr>
                				<td colspan="2">
                				<input id="button01" type="button" value="정보수정" onclick="infoConfirm()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               				<input id="button01" type="button" value="취소" onclick="javascripot:window.location='index'">
+               				<input id="button01" type="button" value="취소" onclick="javascript:window.location='index'">
                				</td>
                				</tr>
                			</form>
