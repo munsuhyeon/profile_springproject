@@ -89,7 +89,7 @@ body{
 }
 a:link{ <!-- (하이퍼링크) 방문하지 않은 링크의 글자색 -->
 	text-decoration: none;
-	color: #0A2229;
+	color: #FFFFFF;
 }
 a:visited { <!-- (하이퍼링크) 방문한적 있는 링크의 글자색 +밑줄삭제 -->
 	text-decoration: none;
