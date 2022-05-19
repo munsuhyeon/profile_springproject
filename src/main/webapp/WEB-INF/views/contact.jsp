@@ -30,7 +30,7 @@
                				<td class="td-type02">
                				안녕하세요 개발자 문수현입니다.<br>
                				보시고 계신 페이지는 Spring Boot FrameWork으로 개발되었습니다.<br>
-               				웹 서버 백엔드 개발자가 필요하신 분은 <a href="mailto:luckyred@gamil.com">luckyred@gamil.com</a>으로 연락 부탁드립니다.
+               				웹 서버 백엔드 개발자가 필요하신 분은 <a href="mailto:shcnu16@gamil.com">luckyred@gamil.com</a>으로 연락 부탁드립니다.
                				</td>
                				</tr>
                			</form>
